@@ -12,10 +12,10 @@ import {
 } from "@carbon/react";
 import { React, useEffect, useState } from "react";
 import CustomDatePicker from "../common/CustomDatePicker";
-
-import { FormattedMessage, useIntl, injectIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { getFromOpenElisServer } from "../utils/Utils";
 import PageBreadCrumb from "../common/PageBreadCrumb";
+
 let breadcrumbs = [{ label: "home.label", link: "/" }];
 
 const EOrderSearch = ({
@@ -175,9 +175,9 @@ const EOrderSearch = ({
           </Column>
           <Column lg={2}>
             <CustomDatePicker
-              id={"eOrder_startDate"}
+              id={"eOrder_endDate"}
               labelText={intl.formatMessage({ id: "eorder.date.end" })}
-              value={startDate}
+              value={endDate}
               className="inputDate"
               onChange={(date) => setEndDate(date)}
             />
